@@ -55,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-sans h-full antialiased" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="nA6CNbhkt6FhyCDoQrXABe_G2lH00HfK4cikrh0TrWo" />
         {/* Anti-FOUC Theme Script */}
         <script
           dangerouslySetInnerHTML={{
