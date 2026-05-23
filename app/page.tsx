@@ -168,11 +168,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Decorative Grid Overlay & Floating Orbs */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
-      <div className="hero-glow top-[-300px] left-[50%] translate-x-[-50%] w-[800px] h-[500px] opacity-40 dark:opacity-30 blur-3xl pointer-events-none"></div>
-      <div className="absolute top-[40%] right-[-200px] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[10%] left-[-250px] w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[130px] pointer-events-none"></div>
+      {/* Simplified hero to improve first paint speed */}
 
       {/* Hero Section */}
       <section className="relative px-4 pt-24 pb-16 text-center sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">

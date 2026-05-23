@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -51,7 +50,7 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -82,12 +81,3 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-.hero-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(20, 184, 166, 0.03) 50%, rgba(0,0,0,0) 100%);
-  border-radius: 999px;
-  filter: blur(40px);
-  pointer-events: none;
-}
