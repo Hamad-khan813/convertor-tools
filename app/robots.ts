@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://convertly.com/sitemap.xml",
+    sitemap: "https://convertortools.vercel.app/sitemap.xml",
   };
 }
