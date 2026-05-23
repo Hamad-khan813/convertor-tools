@@ -1185,9 +1185,17 @@ export default function ToolClient({ categorySlug, toolSlug, initialFrom, initia
             <div className="grid grid-cols-1 sm:grid-cols-9 gap-4 items-center">
               {/* From input */}
               <div className="sm:col-span-4 space-y-2">
-                <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider block">Input Amount</label>
+                <label htmlFor="tool-input" className="text-xs font-bold text-zinc-400 uppercase tracking-wider block">Input Amount</label>
                 <div className="flex flex-col border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 rounded-2xl p-3">
-                  <input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="bg-transparent font-extrabold text-xl focus:outline-none w-full text-zinc-900 dark:text-white" />
+                  <input
+                    id="tool-input"
+                    type="number"
+                    aria-label={`Enter ${selectedFromUnit?.name} value`}
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    className="bg-transparent font-extrabold text-xl focus:outline-none w-full text-zinc-900 dark:text-white"
+                    placeholder="Enter a value"
+                  />
                   <span className="text-xs font-bold text-zinc-500 mt-2">{selectedFromUnit?.name} ({selectedFromUnit?.symbol})</span>
                 </div>
               </div>
@@ -1218,9 +1226,10 @@ export default function ToolClient({ categorySlug, toolSlug, initialFrom, initia
                 {getFormulaText()}
               </div>
               <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                Formula Steps:{" "}
-                {parseFloat(value) || 0} {selectedFromUnit?.symbol} ={" "}
-                {result.toLocaleString(undefined, { maximumFractionDigits: 6 })} {selectedToUnit?.symbol}
+                Input: {parseFloat(value) || 0} {selectedFromUnit?.symbol}. Output: {result.toLocaleString(undefined, { maximumFractionDigits: 6 })} {selectedToUnit?.symbol}.
+              </div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400">
+                This conversion applies the exact unit ratio from {selectedFromUnit?.name} to {selectedToUnit?.name} for precise and consistent results.
               </div>
             </div>
           </div>

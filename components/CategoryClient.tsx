@@ -161,6 +161,37 @@ export default function CategoryClient({ categorySlug }: Props) {
         </div>
       </div>
 
+      <section aria-labelledby="category-usage-heading" className="grid gap-4 sm:grid-cols-3 mb-10">
+        <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm">
+          <h2 id="category-usage-heading" className="text-sm font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">
+            How to use this converter
+          </h2>
+          <ol className="list-decimal list-inside space-y-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <li>Enter the quantity you want to convert in the input field.</li>
+            <li>Select the source and destination units from the dropdown lists.</li>
+            <li>Review the live output and conversion formula for exact precision.</li>
+          </ol>
+        </div>
+
+        <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">
+            Input details
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Use exact values wherever possible. If you are converting between scientific or imperial units, keep decimals for the most accurate results. The converter uses the base unit <strong>{category.baseUnit}</strong> internally for every calculation.
+          </p>
+        </div>
+
+        <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">
+            What this tool provides
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Instant unit conversion with a detailed comparison across all {category.name.toLowerCase()} units. This includes step-by-step formula guidance and a high-precision conversion history for repeat use.
+          </p>
+        </div>
+      </section>
+
       {/* Main calculation row */}
       {category.units.length > 0 ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">

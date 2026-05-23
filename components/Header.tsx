@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { categories } from "@/lib/tools-data";
 
 export default function Header() {
   const pathname = usePathname();
@@ -52,20 +53,21 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => {
-              const isActive = pathname.startsWith(item.href);
+          <nav className="hidden md:flex items-center gap-6" aria-label="Primary category navigation">
+            {categories.map((category) => {
+              const itemHref = `/${category.id}`;
+              const isActive = pathname.startsWith(itemHref);
               return (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={itemHref}
+                  href={itemHref}
                   className={`text-sm font-medium transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
                     isActive
                       ? "text-emerald-600 dark:text-emerald-400 font-semibold"
                       : "text-zinc-600 dark:text-zinc-400"
                   }`}
                 >
-                  {item.name}
+                  {category.name}
                 </Link>
               );
             })}
@@ -115,13 +117,14 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 p-4 transition-all duration-300">
-          <nav className="flex flex-col gap-4">
-            {navItems.map((item) => {
-              const isActive = pathname.startsWith(item.href);
+          <nav className="flex flex-col gap-4" aria-label="Mobile category navigation">
+            {categories.map((category) => {
+              const itemHref = `/${category.id}`;
+              const isActive = pathname.startsWith(itemHref);
               return (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={itemHref}
+                  href={itemHref}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-base font-medium p-2 rounded-xl transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
                     isActive
@@ -129,7 +132,7 @@ export default function Header() {
                       : "text-zinc-700 dark:text-zinc-300"
                   }`}
                 >
-                  {item.name}
+                  {category.name}
                 </Link>
               );
             })}
