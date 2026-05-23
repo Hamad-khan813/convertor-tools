@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { categories } from "@/lib/tools-data";
 
 export default function Header() {
   const pathname = usePathname();
@@ -31,11 +30,11 @@ export default function Header() {
   };
 
   const navItems = [
-    { name: "Length", href: "/length" },
-    { name: "Weight", href: "/weight" },
-    { name: "Temperature", href: "/temperature" },
-    { name: "Finance", href: "/finance" },
-    { name: "Agriculture", href: "/agriculture/npk-fertilizer-calculator" },
+    { name: "Home", href: "/" },
+    { name: "Categories", href: "/#categories" },
+    { name: "Blog", href: "/blog" },
+    { name: "Guides", href: "/guides" },
+    { name: "About Us", href: "/about" },
   ];
 
   return (
@@ -53,21 +52,25 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Primary category navigation">
-            {categories.map((category) => {
-              const itemHref = `/${category.id}`;
-              const isActive = pathname.startsWith(itemHref);
+          <nav className="hidden md:flex items-center gap-6" aria-label="Primary site navigation">
+            {navItems.map((item) => {
+              const isActive =
+                item.href === "/#categories"
+                  ? pathname === "/"
+                  : item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
               return (
                 <Link
-                  key={itemHref}
-                  href={itemHref}
+                  key={item.href}
+                  href={item.href}
                   className={`text-sm font-medium transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
                     isActive
                       ? "text-emerald-600 dark:text-emerald-400 font-semibold"
                       : "text-zinc-600 dark:text-zinc-400"
                   }`}
                 >
-                  {category.name}
+                  {item.name}
                 </Link>
               );
             })}
@@ -117,14 +120,18 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 p-4 transition-all duration-300">
-          <nav className="flex flex-col gap-4" aria-label="Mobile category navigation">
-            {categories.map((category) => {
-              const itemHref = `/${category.id}`;
-              const isActive = pathname.startsWith(itemHref);
+          <nav className="flex flex-col gap-4" aria-label="Mobile site navigation">
+            {navItems.map((item) => {
+              const isActive =
+                item.href === "/#categories"
+                  ? pathname === "/"
+                  : item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
               return (
                 <Link
-                  key={itemHref}
-                  href={itemHref}
+                  key={item.href}
+                  href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-base font-medium p-2 rounded-xl transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
                     isActive
@@ -132,7 +139,7 @@ export default function Header() {
                       : "text-zinc-700 dark:text-zinc-300"
                   }`}
                 >
-                  {category.name}
+                  {item.name}
                 </Link>
               );
             })}

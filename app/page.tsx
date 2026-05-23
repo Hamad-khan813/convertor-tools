@@ -313,7 +313,7 @@ export default function Home() {
             </div>
 
             {/* Comprehensive Category Listing */}
-            <div className="space-y-6">
+            <div id="categories" className="space-y-6">
               <div>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
