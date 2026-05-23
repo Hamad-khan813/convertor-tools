@@ -20,11 +20,20 @@ export const metadata: Metadata = {
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Convertly | Universal Unit Converter & Calculator Hub",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Convertly | High-Precision Free Online Unit Converters & Calculators",
     description: "Instantly convert 400+ units across length, weight, temperature, area, finance, and agriculture. Experience rapid calculations, accurate formulas, and premium dynamic solvers.",
+    images: ["/og-image.svg"],
   },
 };
 
@@ -63,6 +72,37 @@ export default function Home() {
           "position": 1,
           "name": "Home",
           "item": "https://convertly.com"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://convertly.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the conversions on Convertly mathematically accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all computations are executed using high-precision double-float mathematics. Conversion ratios are strictly audited and verified against the National Institute of Standards and Technology (NIST) and international SI guidelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate NPK fertilizer requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply navigate to our dedicated NPK Fertilizer Calculator under the Agriculture category. Input your target Nitrogen, Phosphate, and Potash nutrients, and your bag percentages. The dynamic solver will compute the exact weight needed and flag any potential deficits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a dark mode option?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! You can toggle dark/light theme at any time by clicking the sun or moon icon in the top right corner of the navigation bar."
+          }
         }
       ]
     }

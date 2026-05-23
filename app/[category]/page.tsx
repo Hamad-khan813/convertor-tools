@@ -48,11 +48,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: category.description,
       url: `https://convertly.com/${categorySlug}`,
       type: "website",
+      images: [
+        {
+          url: "/og-image.svg",
+          width: 1200,
+          height: 630,
+          alt: `${category.name} Unit Converter | Convertly`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${category.name} Unit Converter | Convertly`,
       description: category.description,
+      images: ["/og-image.svg"],
     },
   };
 }

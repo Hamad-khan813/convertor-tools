@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="100%" stop-color="#18181b" />
+    </linearGradient>
+
+    <!-- Logo Shape Gradient -->
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Outer Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Rect -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" stroke="#27272a" stroke-width="6" />
+
+  <!-- Technical Grid Overlay (Subtle background) -->
+  <path d="M 128 0 L 128 512 M 256 0 L 256 512 M 384 0 L 384 512 M 0 128 L 512 128 M 0 256 L 512 256 M 0 384 L 512 384" fill="none" stroke="#27272a" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="8,8" />
+
+  <!-- Decorative Target Crosshair rings -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#27272a" stroke-width="1.5" stroke-opacity="0.2" />
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#27272a" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4,4" />
+
+  <!-- Outer Glow Ring -->
+  <circle cx="256" cy="256" r="115" fill="none" stroke="#10b981" stroke-width="3" opacity="0.12" filter="url(#glow)" />
+
+  <!-- High-Precision "Convertly" Logo Glyph: 
+       A stylized double-loop coordinate representation of transitions and math.
+       A continuous vector ribbon representing unit conversion "From" and "To" -->
+  <g filter="url(#glow)">
+    <!-- Main loop vector of 'C' and conversion node -->
+    <path d="M 330,190 
+             C 300,140 212,140 182,190 
+             C 152,240 152,272 182,322 
+             C 212,372 300,372 330,322" 
+          fill="none" 
+          stroke="url(#logoGrad)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Conversion arrow indicator/diagonal line -->
+    <path d="M 230,210 L 340,320" 
+          fill="none" 
+          stroke="url(#logoGrad)" 
+          stroke-width="24" 
+          stroke-linecap="round" />
+    
+    <!-- Precision Target point center -->
+    <circle cx="256" cy="256" r="12" fill="#ffffff" stroke="#10b981" stroke-width="4" />
+  </g>
+
+  <!-- Corner tick marks for technical blueprints look -->
+  <path d="M 40,80 L 40,40 L 80,40 M 432,40 L 472,40 L 472,80 M 472,432 L 472,472 L 432,472 M 80,472 L 40,472 L 40,432" fill="none" stroke="#71717a" stroke-width="3" opacity="0.4" />
+</svg>

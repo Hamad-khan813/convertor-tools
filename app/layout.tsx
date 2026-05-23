@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Convertly | Premium Unit Converter & Advanced Calculators",
@@ -23,16 +17,33 @@ export const metadata: Metadata = {
     "compound interest",
   ],
   authors: [{ name: "Convertly Team" }],
+  metadataBase: new URL("https://convertly.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "/",
+      en: "/",
+    },
+  },
   openGraph: {
     title: "Convertly | Universal Unit Converter & Calculator Hub",
     description: "Premium, high-performance, real-time calculations for speed and accuracy.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Convertly | Universal Unit Converter & Calculator Hub",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Convertly | Universal Unit Converter",
     description: "Fast, accurate, and completely free unit conversions.",
+    images: ["/og-image.svg"],
   },
 };
 
@@ -42,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" className="font-sans h-full antialiased" suppressHydrationWarning>
       <head>
         {/* Anti-FOUC Theme Script */}
         <script
