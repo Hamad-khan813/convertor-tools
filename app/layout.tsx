@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Convertly | Premium Unit Converter & Advanced Calculators",
@@ -75,10 +76,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))] transition-colors duration-300">
-        <Header />
-        <main className="flex-1 flex flex-col w-full">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)] transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          <Header />
+          <main className="flex-1 flex flex-col w-full">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

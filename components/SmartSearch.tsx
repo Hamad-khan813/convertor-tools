@@ -232,8 +232,8 @@ export default function SmartSearch() {
     <div ref={containerRef} className="relative w-full max-w-2xl mx-auto z-40">
       {/* Search Input Container */}
       <div className="relative">
-        <div className="relative flex items-center bg-[hsl(var(--card))] border border-[hsla(var(--border),0.75)] rounded-2xl shadow-[0_20px_50px_rgba(15,23,42,0.05)] focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
-          <span className="pl-4 text-zinc-400">
+        <div className="relative flex items-center bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-2xl shadow-[0_20px_50px_rgba(15,23,42,0.05)] focus-within:ring-2 focus-within:ring-[rgba(37,99,235,0.2)] focus-within:border-[color:var(--primary)] transition-all duration-300">
+          <span className="pl-4 text-[color:var(--muted-text)]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
             </svg>
@@ -244,12 +244,12 @@ export default function SmartSearch() {
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
             placeholder="Try: 'convert 75 kg to pounds' or '37 c to f' or 'npk calculator'..."
-            className="w-full h-14 pl-3 pr-4 rounded-2xl bg-transparent text-zinc-900 dark:text-zinc-50 placeholder-zinc-400 dark:placeholder-zinc-500 text-base focus:outline-none"
+            className="w-full h-14 pl-3 pr-4 rounded-2xl bg-transparent text-[color:var(--foreground)] placeholder:text-[color:var(--muted-text)] text-base focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="pr-4 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 cursor-pointer"
+              className="pr-4 text-[color:var(--muted-text)] hover:text-[color:var(--foreground)] cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -261,7 +261,7 @@ export default function SmartSearch() {
 
       {/* Results Dropdown */}
       {isFocused && query && (
-        <div className="absolute top-full left-0 right-0 mt-3 bg-[hsl(var(--card))] border border-[hsla(var(--border),0.75)] rounded-2xl shadow-xl overflow-hidden backdrop-blur-md transition-colors duration-300">
+        <div className="absolute top-full left-0 right-0 mt-3 bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-2xl shadow-xl overflow-hidden backdrop-blur-md transition-colors duration-300">
           {results.length > 0 ? (
             <div className="p-2">
               {results.map((res, index) => {
@@ -277,7 +277,7 @@ export default function SmartSearch() {
                         <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block mb-1">
                           Instant Answer
                         </span>
-                        <div className="text-lg font-bold text-zinc-900 dark:text-zinc-50 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        <div className="text-lg font-bold text-[color:var(--foreground)] group-hover:text-[color:var(--primary)] transition-colors">
                           {res.title}
                         </div>
                         <span className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -286,7 +286,7 @@ export default function SmartSearch() {
                       </div>
                       <button
                         onClick={(e) => copyToClipboard(valString, e)}
-                        className="ml-4 flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:text-zinc-300 text-xs font-semibold shadow-sm transition-all"
+                        className="ml-4 flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[color:var(--card-border)] bg-[color:var(--card-bg)] hover:bg-[color:var(--input-bg)] text-[color:var(--foreground)] text-xs font-semibold shadow-sm transition-all"
                       >
                         {copied ? (
                           <>
@@ -312,18 +312,18 @@ export default function SmartSearch() {
                   <div
                     key={index}
                     onClick={() => router.push(res.href)}
-                    className="p-3 mb-1 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 rounded-xl cursor-pointer flex items-center justify-between group transition-colors"
+                    className="p-3 mb-1 hover:bg-[color:var(--input-bg)] rounded-xl cursor-pointer flex items-center justify-between group transition-colors"
                   >
                     <div>
-                      <div className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                      <div className="font-semibold text-sm text-[color:var(--foreground)] group-hover:text-[color:var(--primary)] transition-colors">
                         {res.title}
                       </div>
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                      <div className="text-xs text-[color:var(--muted-text)] line-clamp-1">
                         {res.subtitle}
                       </div>
                     </div>
                     {res.categoryName && (
-                      <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold text-[color:var(--muted-text)] bg-[color:var(--input-bg)] px-2 py-0.5 rounded-full">
                         {res.categoryName}
                       </span>
                     )}
@@ -332,7 +332,7 @@ export default function SmartSearch() {
               })}
             </div>
           ) : (
-            <div className="p-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            <div className="p-8 text-center text-sm text-[color:var(--muted-text)]">
               No matching conversions found. Try refining your keywords.
             </div>
           )}

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function CategoriesPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-zinc-100/90 dark:bg-zinc-950/85 rounded-[2rem] shadow-[0_30px_80px_rgba(15,23,42,0.08)] transition-colors duration-300">
+    <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-[color:var(--card-bg)] rounded-[2rem] shadow-[0_30px_80px_rgba(15,23,42,0.08)] transition-colors duration-300">
       <div className="space-y-6">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">Convertly Categories</p>
@@ -55,9 +55,9 @@ export default function CategoriesPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-300 mb-4">
                 <Icon name={category.icon} className="w-6 h-6" />
               </div>
-              <h2 className="text-xl font-bold text-zinc-950 dark:text-white mb-2">{category.name}</h2>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{category.description}</p>
-              <div className="mt-4 text-sm font-semibold text-emerald-600 dark:text-emerald-400">Browse Tools →</div>
+              <h2 className="text-xl font-bold text-[color:var(--foreground)] mb-2">{category.name}</h2>
+              <p className="text-sm text-[color:var(--muted-text)] leading-relaxed">{category.description}</p>
+              <div className="mt-4 text-sm font-semibold text-[color:var(--primary)]">Browse Tools →</div>
             </Link>
           ))}
         </div>

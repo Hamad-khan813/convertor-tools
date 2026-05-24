@@ -2,95 +2,89 @@
 
 @layer base {
   :root {
-    --background: 212 32% 96%;
-    --foreground: 222 14% 12%;
-    --card: 212 20% 100%;
-    --card-foreground: 222 14% 12%;
-    --popover: 212 20% 100%;
-    --popover-foreground: 222 14% 12%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.1 66.7% 96.1%;
-    --secondary: 214 32% 94%;
-    --secondary-foreground: 217 14% 38%;
-    --muted: 214 32% 92%;
-    --muted-foreground: 217 14% 46%;
-    --accent: 142.1 70.6% 45.3%;
-    --accent-foreground: 144.1 66.7% 96.1%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 24% 87%;
-    --input: 214 30% 97%;
-    --ring: 142.1 75% 42%;
-    --shadow: 0 24px 60px rgba(15, 23, 42, 0.09);
-    --radius: 1.75rem;
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --card-bg: #f8fafc;
+    --card-border: #e2e8f0;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --muted-text: #64748b;
+    --input-bg: #f1f5f9;
+    --input-border: #cbd5e1;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #f8fafc;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --border: 224 16% 90%;
+    --radius: 1.25rem;
   }
 
   .dark {
-    --background: 240 7% 6%;
-    --foreground: 0 0% 98%;
-    --card: 240 7% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 7% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.1 66.7% 96.1%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142.1 70.6% 45.3%;
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --muted-text: #94a3b8;
+    --input-bg: #1e293b;
+    --input-border: #475569;
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --footer-bg: #0f172a;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --border: 214 11% 18%;
   }
+}
+
+html {
+  color-scheme: light dark;
 }
 
 body {
   min-height: 100vh;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: var(--background);
+  color: var(--foreground);
   background-image:
-    radial-gradient(circle at top left, rgba(16, 185, 129, 0.14), transparent 20%),
-    radial-gradient(circle at 85% 14%, rgba(16, 185, 129, 0.06), transparent 18%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), transparent 36%);
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 18%),
+    radial-gradient(circle at 85% 12%, rgba(59, 130, 246, 0.08), transparent 16%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), transparent 34%);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 40rem 40rem, 30rem 30rem, 100% 100%;
-  color-scheme: light dark;
+  background-size: 42rem 42rem, 32rem 32rem, 100% 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+:where(html, body, button, input, select, textarea, a, div, section, article, header, footer) {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .surface-card {
-  background-color: hsl(var(--card));
-  border: 1px solid hsla(var(--border), 0.75);
-  box-shadow: var(--shadow);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 24px 60px var(--shadow);
   border-radius: 1.5rem;
 }
 
 .surface-panel {
-  background-color: hsl(var(--secondary));
-  border: 1px solid hsla(var(--border), 0.6);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 1.5rem;
 }
 
 .surface-soft {
-  background-color: hsl(var(--secondary));
-  border-color: hsla(var(--border), 0.65);
+  background-color: var(--background);
+  border-color: var(--card-border);
 }
 
 .surface-input,
 input,
 select,
 textarea {
-  background-color: hsl(var(--input)) !important;
-  border-color: hsl(var(--border)) !important;
-  color: hsl(var(--foreground)) !important;
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--foreground) !important;
 }
 
 .hero-badge {
@@ -99,13 +93,13 @@ textarea {
   gap: 0.65rem;
   padding: 0.6rem 1rem;
   border-radius: 999px;
-  background: rgba(16, 185, 129, 0.08);
-  color: hsl(var(--primary));
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--primary);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(37, 99, 235, 0.16);
 }
 
 .btn-primary {
@@ -115,19 +109,19 @@ textarea {
   gap: 0.5rem;
   padding: 0.95rem 1.4rem;
   border-radius: 1.25rem;
-  background-color: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background-color: var(--primary);
+  color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 18px 45px rgba(16, 185, 129, 0.18);
+  box-shadow: 0 18px 45px rgba(59, 130, 246, 0.2);
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover,
 .btn-primary:active {
   transform: translateY(-1px);
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+  background-color: var(--primary-hover);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(59, 130, 246, 0.25);
 }
 
 .btn-secondary {
@@ -137,10 +131,10 @@ textarea {
   gap: 0.5rem;
   padding: 0.95rem 1.4rem;
   border-radius: 1.25rem;
-  border: 1px solid hsla(var(--border), 0.8);
-  color: hsl(var(--foreground));
+  border: 1px solid var(--card-border);
+  color: var(--foreground);
   backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.72);
   transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -150,13 +144,7 @@ textarea {
 
 .btn-secondary:hover {
   transform: translateY(-1px);
-  border-color: hsl(var(--primary));
-}
-
-.text-gradient-emerald {
-  background: linear-gradient(90deg, #10B981, #14B8A6, #6366F1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-color: var(--primary);
 }
 
 button:focus-visible,
@@ -164,21 +152,21 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
 }
 
 a {
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 ::selection {
-  background: rgba(16, 185, 129, 0.18);
-  color: hsl(var(--foreground));
+  background: rgba(37, 99, 235, 0.18);
+  color: var(--foreground);
 }
 
 /* Custom premium scrollbar */

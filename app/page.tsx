@@ -201,7 +201,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
-            <Link href="/categories" className="btn-primary">
+            <Link href="/categories" className="btn-primary hover:text-black dark:hover:text-white">
               Browse Converters
             </Link>
             <Link href="/guides" className="btn-secondary">

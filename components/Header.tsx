@@ -3,30 +3,23 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const pathname = usePathname();
-  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    // Initial theme check
-    const root = window.document.documentElement;
-    const initialDark = root.classList.contains("dark") || localStorage.getItem("theme") === "dark";
-    setIsDark(initialDark);
+    setMounted(true);
   }, []);
 
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  const isDark = currentTheme === "dark";
+
   const toggleTheme = () => {
-    const root = window.document.documentElement;
-    if (isDark) {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
+    setTheme(isDark ? "light" : "dark");
   };
 
   const navItems = [
@@ -38,7 +31,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))]/95 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/95 shadow-sm shadow-slate-900/5 transition-colors duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-[color:var(--card-border)] bg-[color:var(--nav-bg)]/95 backdrop-blur-xl shadow-sm shadow-black/10 transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-8">
@@ -61,8 +54,8 @@ export default function Header() {
                   href={item.href}
                   className={`text-sm font-semibold transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
                     isActive
-                      ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                      : "text-zinc-700 dark:text-zinc-300"
+                      ? "text-[color:var(--primary)] font-semibold"
+                      : "text-[color:var(--muted-text)] hover:text-[color:var(--primary)]"
                   }`}
                 >
                   {item.name}
@@ -77,16 +70,20 @@ export default function Header() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-emerald-50/80 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-all duration-200 cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[color:var(--card-border)] bg-[color:var(--card-bg)] text-[color:var(--foreground)] hover:bg-[color:var(--input-bg)] transition-all duration-200 cursor-pointer"
             aria-label="Toggle theme"
           >
-            {isDark ? (
-              // Sun icon
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M9.75 15h.008v.008H9.75V15Zm0-6h.008v.008H9.75V9ZM12 9h.008v.008H12V9Zm0 6h.008v.008H12V15Zm2.25-6h.008v.008H14.25V9Zm0 6h.008v.008H14.25V15ZM21 12h-2.25M5.25 12H3m14.25 6.22-1.59-1.59m-9.33 0-1.59 1.59m12.51-12.51-1.59 1.59m-9.33 0-1.59-1.59M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
-              </svg>
+            {mounted ? (
+              isDark ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M9.75 15h.008v.008H9.75V15Zm0-6h.008v.008H9.75V9ZM12 9h.008v.008H12V9Zm0 6h.008v.008H12V15Zm2.25-6h.008v.008H14.25V9Zm0 6h.008v.008H14.25V15ZM21 12h-2.25M5.25 12H3m14.25 6.22-1.59-1.59m-9.33 0-1.59 1.59m12.51-12.51-1.59 1.59m-9.33 0-1.59-1.59M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+              )
             ) : (
-              // Moon icon
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
               </svg>
@@ -96,7 +93,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[hsla(var(--border),0.65)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-[hsl(var(--input))] md:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-all cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[color:var(--card-border)] bg-[color:var(--card-bg)] text-[color:var(--foreground)] hover:bg-[color:var(--input-bg)] md:hidden transition-all cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -114,7 +111,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-95 dark:border-zinc-800 dark:bg-zinc-950 p-4 transition-all duration-300">
+        <div className="md:hidden border-t border-[color:var(--card-border)] bg-[color:var(--nav-bg)]/95 p-4 transition-all duration-300">
           <nav className="flex flex-col gap-4" aria-label="Mobile site navigation">
             {navItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -123,10 +120,10 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-base font-medium p-2 rounded-xl transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
+                  className={`text-base font-medium p-2 rounded-xl transition-colors hover:bg-[color:var(--card-bg)] ${
                     isActive
-                      ? "text-emerald-500 font-semibold bg-emerald-50/50 dark:bg-emerald-950/20"
-                      : "text-zinc-700 dark:text-zinc-300"
+                      ? "text-[color:var(--primary)] font-semibold bg-[color:var(--input-bg)]"
+                      : "text-[color:var(--foreground)]"
                   }`}
                 >
                   {item.name}
