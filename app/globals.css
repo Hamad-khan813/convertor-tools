@@ -2,24 +2,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --background: 210 18% 97%;
+    --foreground: 220 14% 11%;
+    --card: 210 18% 100%;
+    --card-foreground: 220 14% 11%;
+    --popover: 210 18% 100%;
+    --popover-foreground: 220 14% 11%;
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 144.1 66.7% 96.1%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --secondary: 214 24% 94%;
+    --secondary-foreground: 220 12% 28%;
+    --muted: 214 24% 94%;
+    --muted-foreground: 219 16% 43%;
+    --accent: 142.1 70.6% 45.3%;
+    --accent-foreground: 144.1 66.7% 96.1%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --border: 214 20% 87%;
+    --input: 214 22% 96%;
     --ring: 142.1 76.2% 36.3%;
     --radius: 1rem;
   }
@@ -50,6 +50,13 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  background-image:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 25%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 18%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 42rem 42rem, 32rem 32rem;
+  color-scheme: light dark;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   transition: background-color 0.3s ease, color 0.3s ease;
