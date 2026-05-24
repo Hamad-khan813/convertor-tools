@@ -56,6 +56,7 @@ export default function RootLayout({
     <html lang="en" className="font-sans h-full antialiased dark" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="nA6CNbhkt6FhyCDoQrXABe_G2lH00HfK4cikrh0TrWo" />
+        <link rel="icon" href="/favicon.svg" />
       </head>
       <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)] transition-colors duration-300">
         <Header />
