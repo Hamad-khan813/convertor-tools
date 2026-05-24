@@ -38,7 +38,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-90 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/80 transition-colors duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))]/95 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/95 shadow-sm shadow-slate-900/5 transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-8">
@@ -59,10 +59,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
+                  className={`text-sm font-semibold transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
                     isActive
                       ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                      : "text-zinc-600 dark:text-zinc-400"
+                      : "text-zinc-700 dark:text-zinc-300"
                   }`}
                 >
                   {item.name}
@@ -77,7 +77,7 @@ export default function Header() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-all duration-200 cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-emerald-50/80 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-all duration-200 cursor-pointer"
             aria-label="Toggle theme"
           >
             {isDark ? (
@@ -96,7 +96,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-[hsla(var(--border),0.65)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-[hsl(var(--input))] md:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-all cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[hsla(var(--border),0.65)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-[hsl(var(--input))] md:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-all cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (

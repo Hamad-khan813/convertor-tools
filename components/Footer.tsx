@@ -28,7 +28,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-95 dark:border-zinc-800 dark:bg-zinc-950 transition-colors duration-300">
+    <footer className="border-t border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))]/95 dark:border-zinc-800 dark:bg-zinc-950/95 shadow-inner shadow-slate-900/5 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}

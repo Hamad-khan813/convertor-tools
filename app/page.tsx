@@ -162,7 +162,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative flex-1 overflow-hidden bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
+    <div className="relative flex-1 overflow-hidden bg-[hsl(var(--background))] text-zinc-950 dark:bg-[hsl(var(--background))] dark:text-white transition-colors duration-300">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -183,7 +183,7 @@ export default function Home() {
           </div>
 
           {/* Bold Confident Headline */}
-          <h1 className="text-4xl sm:text-6.5xl font-black tracking-tight text-zinc-950 dark:text-white leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-zinc-950 dark:text-white leading-[1.1] mb-6">
             Instantly Convert Any Unit<br />
             <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-500 bg-clip-text text-transparent">
               With Micro-Precision.
@@ -198,6 +198,15 @@ export default function Home() {
           {/* Smart Universal Search */}
           <div className="relative max-w-2xl mx-auto mb-6">
             <SmartSearch />
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+            <Link href="/categories" className="btn-primary">
+              Browse Converters
+            </Link>
+            <Link href="/guides" className="btn-secondary">
+              Explore Guides
+            </Link>
           </div>
 
           {/* Trust Signals */}

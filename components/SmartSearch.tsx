@@ -232,7 +232,7 @@ export default function SmartSearch() {
     <div ref={containerRef} className="relative w-full max-w-2xl mx-auto z-40">
       {/* Search Input Container */}
       <div className="relative">
-        <div className="relative flex items-center bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
+        <div className="relative flex items-center bg-[hsl(var(--card))] border border-[hsla(var(--border),0.75)] rounded-2xl shadow-[0_20px_50px_rgba(15,23,42,0.05)] focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
           <span className="pl-4 text-zinc-400">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
@@ -261,7 +261,7 @@ export default function SmartSearch() {
 
       {/* Results Dropdown */}
       {isFocused && query && (
-        <div className="absolute top-full left-0 right-0 mt-3 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 rounded-2xl shadow-xl overflow-hidden backdrop-blur-md transition-colors duration-300">
+        <div className="absolute top-full left-0 right-0 mt-3 bg-[hsl(var(--card))] border border-[hsla(var(--border),0.75)] rounded-2xl shadow-xl overflow-hidden backdrop-blur-md transition-colors duration-300">
           {results.length > 0 ? (
             <div className="p-2">
               {results.map((res, index) => {
