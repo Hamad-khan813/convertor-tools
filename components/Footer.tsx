@@ -28,7 +28,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 transition-colors duration-300">
+    <footer className="border-t border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-95 dark:border-zinc-800 dark:bg-zinc-950 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-zinc-200 dark:border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 border-t border-[hsla(var(--border),0.7)] dark:border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-zinc-500 dark:text-zinc-400">
             &copy; {currentYear} Convertly Inc. All rights reserved. Made with love for precision.
           </p>

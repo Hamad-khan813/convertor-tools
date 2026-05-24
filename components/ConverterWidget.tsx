@@ -115,7 +115,7 @@ export default function ConverterWidget({
   };
 
   return (
-    <div className="rounded-3xl border border-zinc-200 bg-white/90 p-6 shadow-xl shadow-zinc-200/20 dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-black/10">
+    <div className="rounded-3xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--card))] p-6 shadow-[0_30px_70px_rgba(15,23,42,0.08)] dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-black/10">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-emerald-600 font-bold mb-2">Live Converter</p>
@@ -128,7 +128,7 @@ export default function ConverterWidget({
         </div>
         <button
           onClick={copyResult}
-          className="inline-flex items-center justify-center rounded-2xl border border-emerald-500 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-500/15"
+          className="inline-flex items-center justify-center rounded-2xl bg-[hsl(var(--primary))] px-4 py-2 text-sm font-semibold text-white shadow-[0_20px_30px_rgba(16,185,129,0.18)] transition hover:brightness-110"
         >
           Copy Result
         </button>
@@ -141,14 +141,14 @@ export default function ConverterWidget({
             type="number"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
-            className="mt-2 w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-lg text-zinc-950 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50"
+            className="surface-input mt-2 w-full rounded-2xl border px-4 py-3 text-lg text-zinc-950 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20"
           />
           <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">Enter the amount you want to convert.</p>
         </label>
 
         <label className="block">
           <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Result</span>
-          <div className="mt-2 w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-lg font-semibold text-zinc-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50">
+          <div className="mt-2 w-full rounded-2xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--input))] px-4 py-3 text-lg font-semibold text-zinc-950">
             {outputValue || "0"} {chosenToSymbol}
           </div>
           <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">Live conversion output updates as you type.</p>
@@ -162,7 +162,7 @@ export default function ConverterWidget({
             <select
               value={fromUnit}
               onChange={(event) => setFromUnit(event.target.value)}
-              className="mt-2 w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50"
+              className="surface-input mt-2 w-full rounded-2xl border px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20"
             >
               {category?.units.map((unit) => (
                 <option key={unit.id} value={unit.id}>
@@ -177,7 +177,7 @@ export default function ConverterWidget({
             <select
               value={toUnit}
               onChange={(event) => setToUnit(event.target.value)}
-              className="mt-2 w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50"
+              className="surface-input mt-2 w-full rounded-2xl border px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-emerald-500 focus:ring-emerald-500/20"
             >
               {category?.units.map((unit) => (
                 <option key={unit.id} value={unit.id}>
@@ -188,7 +188,7 @@ export default function ConverterWidget({
           </label>
         </div>
       ) : (
-        <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
+        <div className="mt-6 rounded-2xl border border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] px-4 py-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
           <p>
             Fixed conversion: {chosenFromLabel} ({chosenFromSymbol}) → {chosenToLabel} ({chosenToSymbol}).
           </p>

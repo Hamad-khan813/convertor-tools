@@ -38,7 +38,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/80 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-950/80 transition-colors duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-90 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/80 transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-8">
@@ -96,7 +96,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 hover:bg-zinc-100 md:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-all cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-[hsla(var(--border),0.65)] bg-[hsl(var(--card))] text-zinc-700 hover:bg-[hsl(var(--input))] md:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 transition-all cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -114,7 +114,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 p-4 transition-all duration-300">
+        <div className="md:hidden border-t border-[hsla(var(--border),0.75)] bg-[hsl(var(--secondary))] bg-opacity-95 dark:border-zinc-800 dark:bg-zinc-950 p-4 transition-all duration-300">
           <nav className="flex flex-col gap-4" aria-label="Mobile site navigation">
             {navItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
