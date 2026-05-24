@@ -2,23 +2,6 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0f172a;
-    --card-bg: #f8fafc;
-    --card-border: #e2e8f0;
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --muted-text: #64748b;
-    --input-bg: #f1f5f9;
-    --input-border: #cbd5e1;
-    --nav-bg: rgba(255, 255, 255, 0.95);
-    --footer-bg: #f8fafc;
-    --shadow: rgba(0, 0, 0, 0.08);
-    --border: 224 16% 90%;
-    --radius: 1.25rem;
-  }
-
-  .dark {
     --background: #0f172a;
     --foreground: #f1f5f9;
     --card-bg: #1e293b;
@@ -32,11 +15,12 @@
     --footer-bg: #0f172a;
     --shadow: rgba(0, 0, 0, 0.4);
     --border: 214 11% 18%;
+    --radius: 1.25rem;
   }
 }
 
 html {
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 
 body {
