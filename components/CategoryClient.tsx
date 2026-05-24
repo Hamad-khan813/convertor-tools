@@ -65,7 +65,6 @@ export default function CategoryClient({ categorySlug }: Props) {
         saveToHistory({
           categorySlug,
           categoryName: category.name,
-          toolId: `${categorySlug}-converter`,
           value: val,
           fromUnit: fromObj.symbol,
           toUnit: toObj.symbol,

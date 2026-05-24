@@ -119,6 +119,13 @@ export default function HistoryAndFavorites() {
     setFavorites(updated);
   };
 
+  const getItemHref = (categorySlug: string, toolId?: string) => {
+    if (!toolId || toolId === categorySlug || toolId.endsWith("-converter")) {
+      return `/${categorySlug}`;
+    }
+    return `/${categorySlug}/${toolId}`;
+  };
+
   return (
     <div className="w-full bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 rounded-2xl p-6 shadow-sm">
       {/* Tabs */}
@@ -154,11 +161,7 @@ export default function HistoryAndFavorites() {
                 {history.map((item) => (
                   <Link
                     key={item.id}
-                    href={
-                      item.toolId
-                        ? `/${item.categorySlug}/${item.toolId}`
-                        : `/${item.categorySlug}`
-                    }
+                    href={getItemHref(item.categorySlug, item.toolId)}
                     className="block p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 hover:border-emerald-500/20 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all group"
                   >
                     <div className="flex justify-between items-center">
@@ -198,28 +201,31 @@ export default function HistoryAndFavorites() {
         <div>
           {favorites.length > 0 ? (
             <div className="max-h-[340px] overflow-y-auto space-y-2 pr-1">
-              {favorites.map((item) => (
-                <div
-                  key={item.toolId}
-                  className="flex items-center justify-between p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 hover:border-emerald-500/20 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all group"
-                >
-                  <Link
-                    href={`/${item.categorySlug}/${item.toolId}`}
-                    className="flex-1 font-semibold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors"
+              {favorites.map((item) => {
+                const favoriteHref = getItemHref(item.categorySlug, item.toolId);
+                return (
+                  <div
+                    key={item.toolId}
+                    className="flex items-center justify-between p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 hover:border-emerald-500/20 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all group"
                   >
-                    {item.toolName}
-                  </Link>
-                  <button
-                    onClick={() => removeFavoriteItem(item.toolId)}
-                    className="text-zinc-400 hover:text-red-500 p-1 cursor-pointer"
-                    aria-label="Remove favorite"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} className="w-4 h-4 text-emerald-500 hover:text-zinc-400 fill-emerald-500 hover:fill-none transition-colors">
-                      <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
+                    <Link
+                      href={favoriteHref}
+                      className="flex-1 font-semibold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors"
+                    >
+                      {item.toolName}
+                    </Link>
+                    <button
+                      onClick={() => removeFavoriteItem(item.toolId)}
+                      className="text-zinc-400 hover:text-red-500 p-1 cursor-pointer"
+                      aria-label="Remove favorite"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} className="w-4 h-4 text-emerald-500 hover:text-zinc-400 fill-emerald-500 hover:fill-none transition-colors">
+                        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                      </svg>
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <div className="text-center py-8 text-sm text-zinc-400 dark:text-zinc-500">

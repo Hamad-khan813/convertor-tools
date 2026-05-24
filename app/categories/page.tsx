@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function CategoriesPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-zinc-100/90 dark:bg-zinc-950/85 rounded-[2rem] shadow-[0_30px_80px_rgba(15,23,42,0.08)] transition-colors duration-300">
       <div className="space-y-6">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">Convertly Categories</p>
