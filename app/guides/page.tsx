@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Convertly Guides | How to Use Converters & Calculators",
   description: "Explore Convertly guides for step-by-step instructions on using converters, calculators, and measurement tools effectively.",
   alternates: {
-    canonical: "https://convertly.com/guides",
+    canonical: "https://unit-convertor-tools.vercel.app/guides",
   },
   openGraph: {
     title: "Convertly Guides | How to Use Converters & Calculators",
     description: "Explore Convertly guides for step-by-step instructions on using converters, calculators, and measurement tools effectively.",
-    url: "https://convertly.com/guides",
+    url: "https://unit-convertor-tools.vercel.app/guides",
     type: "website",
     images: [
       {
@@ -88,3 +88,4 @@ export default function GuidesPage() {
     </div>
   );
 }
+

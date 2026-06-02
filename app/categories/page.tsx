@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Convertly Categories | All Converter Types",
   description: "Browse all Convertly conversion categories including length, weight, volume, temperature, finance, agriculture, and more.",
   alternates: {
-    canonical: "https://convertly.com/categories",
+    canonical: "https://unit-convertor-tools.vercel.app/categories",
   },
   openGraph: {
     title: "Convertly Categories | All Converter Types",
     description: "Browse all Convertly conversion categories including length, weight, volume, temperature, finance, agriculture, and more.",
-    url: "https://convertly.com/categories",
+    url: "https://unit-convertor-tools.vercel.app/categories",
     type: "website",
     images: [
       {
@@ -65,3 +65,4 @@ export default function CategoriesPage() {
     </div>
   );
 }
+

@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description: "Read the usage terms, math formula disclaimers, and copyright policies of the Convertly calculator hub. Double-precision numbers provided for educational and academic use.",
   keywords: ["terms of service", "convertly rules", "calculator disclaimer", "academic tool usage", "precision licensing"],
   alternates: {
-    canonical: "https://convertly.com/terms",
+    canonical: "https://unit-convertor-tools.vercel.app/terms",
     languages: {
-      "x-default": "https://convertly.com/terms",
-      en: "https://convertly.com/terms",
+      "x-default": "https://unit-convertor-tools.vercel.app/terms",
+      en: "https://unit-convertor-tools.vercel.app/terms",
     },
   },
   openGraph: {
     title: "Terms of Service | Mathematical Disclaimer & Usage Guidelines | Convertly",
     description: "Read the usage terms, math formula disclaimers, and copyright policies of the Convertly calculator hub. Double-precision numbers provided for educational and academic use.",
-    url: "https://convertly.com/terms",
+    url: "https://unit-convertor-tools.vercel.app/terms",
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
@@ -33,27 +33,27 @@ export default function TermsPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://convertly.com/terms#webpage",
-      "url": "https://convertly.com/terms",
+      "@id": "https://unit-convertor-tools.vercel.app/terms#webpage",
+      "url": "https://unit-convertor-tools.vercel.app/terms",
       "name": "Terms of Service - Convertly",
       "description": "General operating terms and mathematical disclaimers of Convertly.",
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": "https://convertly.com/terms#breadcrumb",
+      "@id": "https://unit-convertor-tools.vercel.app/terms#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com",
+          "item": "https://unit-convertor-tools.vercel.app",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Terms of Service",
-          "item": "https://convertly.com/terms",
+          "item": "https://unit-convertor-tools.vercel.app/terms",
         },
       ],
     },
@@ -105,3 +105,4 @@ export default function TermsPage() {
     </>
   );
 }
+

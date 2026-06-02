@@ -142,16 +142,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "convert units online",
     ],
     alternates: {
-      canonical: `https://convertly.com/${categorySlug}/${toolSlug}`,
+      canonical: `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`,
       languages: {
-        "x-default": `https://convertly.com/${categorySlug}/${toolSlug}`,
-        en: `https://convertly.com/${categorySlug}/${toolSlug}`,
+        "x-default": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`,
+        en: `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`,
       },
     },
     openGraph: {
       title: seoTitle,
       description: seoDesc,
-      url: `https://convertly.com/${categorySlug}/${toolSlug}`,
+      url: `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`,
       siteName: "Convertly",
       locale: "en_US",
       type: "website",
@@ -210,19 +210,19 @@ export default async function ToolPage({ params }: Props) {
             "@type": "HowToStep",
             "name": "Identify Input Value",
             "text": "Locate the input measurement value you want to convert.",
-            "url": `https://convertly.com/${categorySlug}/${toolSlug}#step1`,
+            "url": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}#step1`,
           },
           {
             "@type": "HowToStep",
             "name": "Apply Mathematical Formula",
             "text": `Apply the conversion formula: ${toolData.formula}`,
-            "url": `https://convertly.com/${categorySlug}/${toolSlug}#step2`,
+            "url": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}#step2`,
           },
           {
             "@type": "HowToStep",
             "name": "Calculate & Review Precision",
             "text": "Multiply or resolve the equation to derive the final exact output. Check against standard adjacent unit comparison tables for precision.",
-            "url": `https://convertly.com/${categorySlug}/${toolSlug}#step3`,
+            "url": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}#step3`,
           }
         ]
       }
@@ -233,36 +233,36 @@ export default async function ToolPage({ params }: Props) {
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "@id": `https://convertly.com/${categorySlug}/${toolSlug}#webapp`,
+      "@id": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}#webapp`,
       "name": `${toolData.name} Calculator - Convertly`,
       "description": toolData.description,
       "applicationCategory": "EducationalApplication",
-      "url": `https://convertly.com/${categorySlug}/${toolSlug}`,
+      "url": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`,
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript. Requires HTML5.",
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": `https://convertly.com/${categorySlug}/${toolSlug}#breadcrumb`,
+      "@id": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}#breadcrumb`,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com"
+          "item": "https://unit-convertor-tools.vercel.app"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": category.name,
-          "item": `https://convertly.com/${categorySlug}`
+          "item": `https://unit-convertor-tools.vercel.app/${categorySlug}`
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": toolData.name,
-          "item": `https://convertly.com/${categorySlug}/${toolSlug}`
+          "item": `https://unit-convertor-tools.vercel.app/${categorySlug}/${toolSlug}`
         }
       ]
     },

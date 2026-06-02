@@ -71,11 +71,18 @@ export default function ConverterWidget({
   const [toUnit, setToUnit] = useState(resolveUnit(initialTo || category?.units?.[1]?.id || ""));
   const [inputValue, setInputValue] = useState("1");
   const [outputValue, setOutputValue] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
+  const [conversionCount, setConversionCount] = useState(0);
 
   useEffect(() => {
     setFromUnit(resolveUnit(initialFrom || category?.units?.[0]?.id || ""));
     setToUnit(resolveUnit(initialTo || category?.units?.[1]?.id || ""));
   }, [initialFrom, initialTo, category?.units]);
+
+  useEffect(() => {
+    const stored = Number(window.localStorage.getItem("unit_convertor_tools_conversion_count") || "0");
+    setConversionCount(stored);
+  }, []);
 
   const hasCategoryConversion = Boolean(category?.units?.length && !manualConversionType);
 
@@ -106,12 +113,42 @@ export default function ConverterWidget({
   const chosenToSymbol = toSymbol || category?.units?.find((unit) => unit.id === toUnit)?.symbol || "";
 
   const hasSelectableUnits = hasCategoryConversion;
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    window.setTimeout(() => setToastMessage(""), 2800);
+  };
+
   const copyResult = async () => {
     try {
       await navigator.clipboard.writeText(outputValue);
+      showToast("Result copied to clipboard.");
+      const nextCount = conversionCount + 1;
+      window.localStorage.setItem("unit_convertor_tools_conversion_count", String(nextCount));
+      setConversionCount(nextCount);
+      if (nextCount === 10) {
+        showToast("You converted 10 units today! 🎉 Keep the streak going.");
+      }
     } catch (error) {
       console.error(error);
+      showToast("Copy failed. Try again manually.");
     }
+  };
+
+  const shareResult = async () => {
+    const shareText = `${chosenFromLabel} to ${chosenToLabel} result: ${outputValue} ${chosenToSymbol} — on Unit Convertor Tools. Try it now!`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+      await navigator.share({ title: "Unit Convertor Tools Result", text: shareText, url: shareUrl });
+      return;
+    }
+
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+    window.open(twitterUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const saveAsPdf = () => {
+    window.print();
   };
 
   return (
@@ -125,13 +162,30 @@ export default function ConverterWidget({
           <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl">
             Enter a value below and see an instant conversion. Copy the result with one tap.
           </p>
+          <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+            Conversions today: <strong>{conversionCount}</strong>
+          </p>
         </div>
-        <button
-          onClick={copyResult}
-          className="inline-flex items-center justify-center rounded-2xl bg-[hsl(var(--primary))] px-4 py-2 text-sm font-semibold text-white shadow-[0_20px_30px_rgba(16,185,129,0.18)] transition hover:brightness-110"
-        >
-          Copy Result
-        </button>
+        <div className="flex flex-wrap gap-3">
+          <button
+            onClick={copyResult}
+            className="inline-flex items-center justify-center rounded-2xl bg-[hsl(var(--primary))] px-4 py-2 text-sm font-semibold text-white shadow-[0_20px_30px_rgba(16,185,129,0.18)] transition hover:brightness-110"
+          >
+            Copy Result
+          </button>
+          <button
+            onClick={shareResult}
+            className="inline-flex items-center justify-center rounded-2xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--card))] px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:border-emerald-500 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+          >
+            Share Result
+          </button>
+          <button
+            onClick={saveAsPdf}
+            className="inline-flex items-center justify-center rounded-2xl border border-[hsla(var(--border),0.85)] bg-[hsl(var(--card))] px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:border-emerald-500 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+          >
+            Save as PDF
+          </button>
+        </div>
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -194,6 +248,16 @@ export default function ConverterWidget({
           </p>
         </div>
       )}
+
+      {toastMessage ? (
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none fixed bottom-6 left-1/2 z-50 w-[min(90vw,28rem)] -translate-x-1/2 rounded-3xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-950 shadow-[0_20px_40px_rgba(16,185,129,0.12)] dark:border-emerald-500/30 dark:bg-emerald-950/95 dark:text-emerald-100"
+        >
+          {toastMessage}
+        </div>
+      ) : null}
     </div>
   );
 }

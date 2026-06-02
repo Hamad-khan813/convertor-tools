@@ -11,12 +11,16 @@ export const metadata: Metadata = {
   description: "Instantly convert 400+ units across length, weight, temperature, area, finance, and agriculture. Experience rapid calculations, accurate formulas, and premium dynamic solvers.",
   keywords: ["unit converter", "metric conversion", "calculator", "npk calculator", "bmi calculator", "loan calculator", "celsius to fahrenheit", "kg to lbs"],
   alternates: {
-    canonical: "https://convertly.com",
+    canonical: "https://unit-convertor-tools.vercel.app",
+    languages: {
+      "x-default": "https://unit-convertor-tools.vercel.app",
+      en: "https://unit-convertor-tools.vercel.app",
+    },
   },
   openGraph: {
     title: "Convertly | High-Precision Free Online Unit Converters & Calculators",
     description: "Instantly convert 400+ units across length, weight, temperature, area, finance, and agriculture. Experience rapid calculations, accurate formulas, and premium dynamic solvers.",
-    url: "https://convertly.com",
+    url: "https://unit-convertor-tools.vercel.app",
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
@@ -42,43 +46,43 @@ export default function Home() {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "@id": "https://convertly.com/#organization",
+      "@id": "https://unit-convertor-tools.vercel.app/#organization",
       "name": "Convertly",
-      "url": "https://convertly.com",
-      "logo": "https://convertly.com/icon-512.png",
+      "url": "https://unit-convertor-tools.vercel.app",
+      "logo": "https://unit-convertor-tools.vercel.app/icon-512.png",
       "description": "High-Precision Free Online Unit Converters & Calculators",
       "sameAs": []
     },
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://convertly.com/#website",
-      "url": "https://convertly.com",
+      "@id": "https://unit-convertor-tools.vercel.app/#website",
+      "url": "https://unit-convertor-tools.vercel.app",
       "name": "Convertly",
       "description": "High-Precision Free Online Unit Converters & Calculators",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://convertly.com/?search={search_term_string}",
+        "target": "https://unit-convertor-tools.vercel.app/?search={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": "https://convertly.com/#breadcrumb",
+      "@id": "https://unit-convertor-tools.vercel.app/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com"
+          "item": "https://unit-convertor-tools.vercel.app"
         }
       ]
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "@id": "https://convertly.com/#faq",
+      "@id": "https://unit-convertor-tools.vercel.app/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -541,3 +545,4 @@ export default function Home() {
     </div>
   );
 }
+

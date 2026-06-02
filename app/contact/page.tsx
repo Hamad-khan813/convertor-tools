@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   description: "Get in touch with the Convertly engineering and mathematics team. Report calculator rounding bugs, request specialized physical converters, or check server status.",
   keywords: ["contact convertly", "request calculator", "report rounding bug", "convertly engineering", "support"],
   alternates: {
-    canonical: "https://convertly.com/contact",
+    canonical: "https://unit-convertor-tools.vercel.app/contact",
     languages: {
-      "x-default": "https://convertly.com/contact",
-      en: "https://convertly.com/contact",
+      "x-default": "https://unit-convertor-tools.vercel.app/contact",
+      en: "https://unit-convertor-tools.vercel.app/contact",
     },
   },
   openGraph: {
     title: "Contact Support & Engineering Calibration | Convertly",
     description: "Get in touch with the Convertly engineering and mathematics team. Report calculator rounding bugs or request specialized physical converters.",
-    url: "https://convertly.com/contact",
+    url: "https://unit-convertor-tools.vercel.app/contact",
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
@@ -34,27 +34,27 @@ export default function ContactPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://convertly.com/contact#webpage",
-      "url": "https://convertly.com/contact",
+      "@id": "https://unit-convertor-tools.vercel.app/contact#webpage",
+      "url": "https://unit-convertor-tools.vercel.app/contact",
       "name": "Contact Support & Engineering Calibration - Convertly",
       "description": "Contact the core team for unit converter calibration queries, tool requests, and general support.",
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": "https://convertly.com/contact#breadcrumb",
+      "@id": "https://unit-convertor-tools.vercel.app/contact#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com",
+          "item": "https://unit-convertor-tools.vercel.app",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Contact",
-          "item": "https://convertly.com/contact",
+          "item": "https://unit-convertor-tools.vercel.app/contact",
         },
       ],
     },
@@ -113,3 +113,4 @@ export default function ContactPage() {
     </>
   );
 }
+

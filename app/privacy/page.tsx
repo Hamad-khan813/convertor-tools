@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description: "Read how Convertly protects your physical and financial calculator parameters. We use zero third-party ads, zero tracking scripts, and secure browser-native localStorage.",
   keywords: ["privacy policy", "zero ads", "no cookies", "secure calculators", "local data"],
   alternates: {
-    canonical: "https://convertly.com/privacy",
+    canonical: "https://unit-convertor-tools.vercel.app/privacy",
     languages: {
-      "x-default": "https://convertly.com/privacy",
-      en: "https://convertly.com/privacy",
+      "x-default": "https://unit-convertor-tools.vercel.app/privacy",
+      en: "https://unit-convertor-tools.vercel.app/privacy",
     },
   },
   openGraph: {
     title: "Privacy Policy | Zero-Tracking Data Integrity Commitments | Convertly",
     description: "Read how Convertly protects your physical and financial calculator parameters. We use zero third-party ads, zero tracking scripts, and secure browser-native localStorage.",
-    url: "https://convertly.com/privacy",
+    url: "https://unit-convertor-tools.vercel.app/privacy",
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
@@ -33,27 +33,27 @@ export default function PrivacyPage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://convertly.com/privacy#webpage",
-      "url": "https://convertly.com/privacy",
+      "@id": "https://unit-convertor-tools.vercel.app/privacy#webpage",
+      "url": "https://unit-convertor-tools.vercel.app/privacy",
       "name": "Privacy Policy - Convertly",
       "description": "Information on our data protection parameters and local storage implementation.",
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": "https://convertly.com/privacy#breadcrumb",
+      "@id": "https://unit-convertor-tools.vercel.app/privacy#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com",
+          "item": "https://unit-convertor-tools.vercel.app",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Privacy Policy",
-          "item": "https://convertly.com/privacy",
+          "item": "https://unit-convertor-tools.vercel.app/privacy",
         },
       ],
     },
@@ -105,3 +105,4 @@ export default function PrivacyPage() {
     </>
   );
 }
+

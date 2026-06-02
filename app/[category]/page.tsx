@@ -37,16 +37,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...category.units.slice(0, 5).map((u) => `${u.name.toLowerCase()} converter`),
     ],
     alternates: {
-      canonical: `https://convertly.com/${categorySlug}`,
+      canonical: `https://unit-convertor-tools.vercel.app/${categorySlug}`,
       languages: {
-        "x-default": `https://convertly.com/${categorySlug}`,
-        en: `https://convertly.com/${categorySlug}`,
+        "x-default": `https://unit-convertor-tools.vercel.app/${categorySlug}`,
+        en: `https://unit-convertor-tools.vercel.app/${categorySlug}`,
       },
     },
     openGraph: {
       title: `${category.name} Unit Converter | Convertly`,
       description: category.description,
-      url: `https://convertly.com/${categorySlug}`,
+      url: `https://unit-convertor-tools.vercel.app/${categorySlug}`,
       type: "website",
       images: [
         {
@@ -79,30 +79,30 @@ export default async function CategoryPage({ params }: Props) {
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "@id": `https://convertly.com/${categorySlug}#webapp`,
+      "@id": `https://unit-convertor-tools.vercel.app/${categorySlug}#webapp`,
       "name": `${category.name} Unit Converter - Convertly`,
       "description": category.description,
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript. Requires HTML5.",
-      "url": `https://convertly.com/${categorySlug}`,
+      "url": `https://unit-convertor-tools.vercel.app/${categorySlug}`,
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": `https://convertly.com/${categorySlug}#breadcrumb`,
+      "@id": `https://unit-convertor-tools.vercel.app/${categorySlug}#breadcrumb`,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com"
+          "item": "https://unit-convertor-tools.vercel.app"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": category.name,
-          "item": `https://convertly.com/${categorySlug}`
+          "item": `https://unit-convertor-tools.vercel.app/${categorySlug}`
         }
       ]
     }

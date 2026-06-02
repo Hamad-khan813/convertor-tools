@@ -1,0 +1,26 @@
+{
+  "name": "Unit Convertor Tools — Free Unit Converters & Calculators",
+  "short_name": "Unit Convertor Tools",
+  "description": "Fast, accurate online unit converters and advanced calculators for agriculture, finance, and engineering.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

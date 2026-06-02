@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Convertly Blog | Conversion Tips & Updates",
   description: "Explore the Convertly blog for practical conversion tips, tool updates, and smarter unit conversion workflows.",
   alternates: {
-    canonical: "https://convertly.com/blog",
+    canonical: "https://unit-convertor-tools.vercel.app/blog",
   },
   openGraph: {
     title: "Convertly Blog | Conversion Tips & Updates",
     description: "Explore the Convertly blog for practical conversion tips, tool updates, and smarter unit conversion workflows.",
-    url: "https://convertly.com/blog",
+    url: "https://unit-convertor-tools.vercel.app/blog",
     type: "website",
     images: [
       {
@@ -60,3 +60,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

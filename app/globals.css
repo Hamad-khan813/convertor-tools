@@ -17,10 +17,30 @@
     --border: 214 11% 18%;
     --radius: 1.25rem;
   }
+
+  html.light {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --primary: #10b981;
+    --primary-hover: #14b8a6;
+    --muted-text: #64748b;
+    --input-bg: #f8fafc;
+    --input-border: #cbd5e1;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #f8fafc;
+    --shadow: rgba(15, 23, 42, 0.08);
+    --border: 220 15% 92%;
+  }
 }
 
 html {
   color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
 }
 
 body {

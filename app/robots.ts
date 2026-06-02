@@ -2,18 +2,22 @@ import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
+    host: "https://unit-convertor-tools.vercel.app",
     rules: [
       {
         userAgent: "*",
         allow: "/",
         disallow: [
           "/_next/",
-          "/static/",
           "/api/",
-          "/*?*", // Prevent crawl budget wastage on arbitrary search params / tracking queries
+          "/admin/",
+          "/dashboard/",
+          "/wp-admin/",
+          "/private/",
+          "/secret/",
         ],
       },
     ],
-    sitemap: "https://convertortools.vercel.app/sitemap.xml",
+    sitemap: "https://unit-convertor-tools.vercel.app/sitemap.xml",
   };
 }

@@ -7,16 +7,16 @@ export const metadata: Metadata = {
   description: "Learn about the mission, technological stack, and strict mathematical standards powering Convertly. Blazing fast, zero ads, no trackers, and NIST audited double-float precision.",
   keywords: ["about convertly", "numerical standards", "calculator precision", "privacy policy", "fast unit converters"],
   alternates: {
-    canonical: "https://convertly.com/about",
+    canonical: "https://unit-convertor-tools.vercel.app/about",
     languages: {
-      "x-default": "https://convertly.com/about",
-      en: "https://convertly.com/about",
+      "x-default": "https://unit-convertor-tools.vercel.app/about",
+      en: "https://unit-convertor-tools.vercel.app/about",
     },
   },
   openGraph: {
     title: "About Convertly | Premium Numerical Standards & Precision Mission",
     description: "Learn about the mission, technological stack, and strict mathematical standards powering Convertly.",
-    url: "https://convertly.com/about",
+    url: "https://unit-convertor-tools.vercel.app/about",
     siteName: "Convertly",
     locale: "en_US",
     type: "website",
@@ -33,27 +33,27 @@ export default function AboutPage() {
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "@id": "https://convertly.com/about#webpage",
-      "url": "https://convertly.com/about",
+      "@id": "https://unit-convertor-tools.vercel.app/about#webpage",
+      "url": "https://unit-convertor-tools.vercel.app/about",
       "name": "About Convertly - Our Precision Mission",
       "description": "Discover the scientific and engineering parameters guiding Convertly unit solvers.",
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "@id": "https://convertly.com/about#breadcrumb",
+      "@id": "https://unit-convertor-tools.vercel.app/about#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://convertly.com",
+          "item": "https://unit-convertor-tools.vercel.app",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "About",
-          "item": "https://convertly.com/about",
+          "item": "https://unit-convertor-tools.vercel.app/about",
         },
       ],
     },
@@ -108,3 +108,4 @@ export default function AboutPage() {
     </>
   );
 }
+

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:submit-sitemap": "node ./scripts/submit-sitemap.js",
+    "seo:audit": "node ./scripts/seo-monitor.js"
   },
   "dependencies": {
     "next": "16.2.6",

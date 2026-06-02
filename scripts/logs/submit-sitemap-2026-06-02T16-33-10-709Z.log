@@ -1,0 +1,11 @@
+Sitemap submission run: 2026-06-02T16:33:10.709Z
+URL: https://www.google.com/ping?sitemap=https%3A%2F%2Funit-convertor-tools.vercel.app%2Fsitemap.xml
+Status: 404
+Success: false
+Response snippet: <HTML> <HEAD> <TITLE>Sitemaps ping is deprecated. See https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping.</TITLE> </HEAD> <BODY BGCOLOR="#FFFFFF" TEXT="#000000"> <!-- GSE Default Error --> <H1>Sitemaps ping is deprecated. See https://developers.google.com/search/blog/2023/06/sit
+---
+URL: https://www.bing.com/ping?sitemap=https%3A%2F%2Funit-convertor-tools.vercel.app%2Fsitemap.xml
+Status: 410
+Success: false
+Response snippet: 
+---
