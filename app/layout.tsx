@@ -129,6 +129,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-512.svg" />
         <link rel="icon" href="/favicon.svg" />
         <meta name="google-site-verification" content="nA6CNbhkt6FhyCDoQrXABe_G2lH00HfK4cikrh0TrWo" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1763646787123704"
+          crossOrigin="anonymous"
+        ></script>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)] transition-colors duration-300">
