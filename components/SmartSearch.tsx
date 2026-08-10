@@ -270,7 +270,7 @@ export default function SmartSearch() {
                   return (
                     <div
                       key={index}
-                      onClick={() => router.push(res.href)}
+                      onClick={() => router.push(res.href as any)}
                       className="p-4 mb-2 bg-gradient-to-r from-emerald-500/5 to-teal-500/5 dark:from-emerald-950/10 dark:to-teal-950/10 border border-emerald-500/20 dark:border-emerald-500/10 rounded-xl flex items-center justify-between cursor-pointer group transition-all"
                     >
                       <div className="flex-1">
@@ -311,7 +311,7 @@ export default function SmartSearch() {
                 return (
                   <div
                     key={index}
-                    onClick={() => router.push(res.href)}
+                    onClick={() => router.push(res.href as any)}
                     className="p-3 mb-1 hover:bg-[color:var(--input-bg)] rounded-xl cursor-pointer flex items-center justify-between group transition-colors"
                   >
                     <div>

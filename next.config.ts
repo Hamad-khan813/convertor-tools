@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   trailingSlash: true,
-  typedRoutes: true,
+  typedRoutes: false,
   turbopack: {
     root: __dirname,
   },

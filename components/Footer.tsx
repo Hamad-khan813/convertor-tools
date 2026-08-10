@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import type { Route } from "next";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -55,7 +56,7 @@ export default function Footer() {
               {categories.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={item.href as Route}
                     className="text-sm text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 transition-colors"
                   >
                     {item.name}
@@ -74,7 +75,7 @@ export default function Footer() {
               {tools.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={item.href as Route}
                     className="text-sm text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 transition-colors"
                   >
                     {item.name}
@@ -93,7 +94,7 @@ export default function Footer() {
               {company.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={item.href as Route}
                     className="text-sm text-zinc-600 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-400 transition-colors"
                   >
                     {item.name}

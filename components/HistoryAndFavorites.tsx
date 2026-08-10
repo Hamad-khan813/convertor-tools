@@ -161,7 +161,7 @@ export default function HistoryAndFavorites() {
                 {history.map((item) => (
                   <Link
                     key={item.id}
-                    href={getItemHref(item.categorySlug, item.toolId)}
+                    href={getItemHref(item.categorySlug, item.toolId) as any}
                     className="block p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 hover:border-emerald-500/20 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all group"
                   >
                     <div className="flex justify-between items-center">
@@ -209,7 +209,7 @@ export default function HistoryAndFavorites() {
                     className="flex items-center justify-between p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 hover:border-emerald-500/20 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all group"
                   >
                     <Link
-                      href={favoriteHref}
+                      href={favoriteHref as any}
                       className="flex-1 font-semibold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors"
                     >
                       {item.toolName}

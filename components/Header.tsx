@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -55,7 +56,7 @@ export default function Header() {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href as Route}
                   className={`text-sm font-semibold transition-colors hover:text-emerald-500 dark:hover:text-emerald-400 ${
                     isActive
                       ? "text-[color:var(--primary)] font-semibold"
@@ -116,7 +117,7 @@ export default function Header() {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href as Route}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-base font-medium p-2 rounded-xl transition-colors hover:bg-[color:var(--card-bg)] ${
                     isActive
