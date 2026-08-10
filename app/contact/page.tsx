@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Support & Engineering Calibration | Convertly",
-  description: "Get in touch with the Convertly engineering and mathematics team. Report calculator rounding bugs, request specialized physical converters, or check server status.",
+  description: "Contact Convertly for feedback, tool requests, and support questions.",
   keywords: ["contact convertly", "request calculator", "report rounding bug", "convertly engineering", "support"],
   alternates: {
     canonical: "https://unit-convertor-tools.vercel.app/contact",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Contact Support & Engineering Calibration | Convertly",
-    description: "Get in touch with the Convertly engineering and mathematics team. Report calculator rounding bugs or request specialized physical converters.",
+    title: "Contact Convertly | Support and Tool Requests",
+    description: "Contact Convertly for feedback, tool requests, and support questions.",
     url: "https://unit-convertor-tools.vercel.app/contact",
     siteName: "Convertly",
     locale: "en_US",
@@ -36,8 +36,8 @@ export default function ContactPage() {
       "@type": "WebPage",
       "@id": "https://unit-convertor-tools.vercel.app/contact#webpage",
       "url": "https://unit-convertor-tools.vercel.app/contact",
-      "name": "Contact Support & Engineering Calibration - Convertly",
-      "description": "Contact the core team for unit converter calibration queries, tool requests, and general support.",
+      "name": "Contact Convertly",
+      "description": "Contact Convertly for support, feedback, and tool requests.",
     },
     {
       "@context": "https://schema.org",
@@ -81,7 +81,7 @@ export default function ContactPage() {
               Contact Support & Engineering
             </h1>
             <p className="text-zinc-500 mt-2 text-sm max-w-2xl leading-relaxed">
-              Report a mathematical rounding bug, request a new calculator tool, or contact the core engineers.
+              Send feedback, request a new calculator, or ask a support question.
             </p>
           </div>
 
@@ -90,17 +90,16 @@ export default function ContactPage() {
             <div className="space-y-6 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
               <div>
                 <h3 className="font-bold text-zinc-900 dark:text-white text-base">Direct Channels</h3>
-                <p className="mt-1">For critical enterprise calibration API integrations, contact our engineering branch:</p>
+                <p className="mt-1">Use the details below to get in touch with the site owner:</p>
                 <div className="mt-3 space-y-1.5 font-semibold text-emerald-600 dark:text-emerald-400">
                   <div>Email: hamadkhan9996310@gmail.com</div>
-                  <div>Server Availability: 99.99% Up</div>
                 </div>
               </div>
 
               <div className="border-t border-zinc-200 dark:border-zinc-800 pt-6">
                 <h3 className="font-bold text-zinc-900 dark:text-white text-base">Tool Requests</h3>
                 <p className="mt-1">
-                  We are actively expanding our catalog towards 1000+ custom calculators. Let us know if you require specialized construction, chemical science, or financial amortization worksheets.
+                  We are expanding the catalog over time. Let us know if you need a specific conversion tool or calculator.
                 </p>
               </div>
             </div>

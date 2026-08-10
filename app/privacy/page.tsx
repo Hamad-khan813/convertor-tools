@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Zero-Tracking Data Integrity Commitments | Convertly",
-  description: "Read how Convertly protects your physical and financial calculator parameters. We use zero third-party ads, zero tracking scripts, and secure browser-native localStorage.",
-  keywords: ["privacy policy", "zero ads", "no cookies", "secure calculators", "local data"],
+  title: "Privacy Policy | Convertly",
+  description: "Read how Convertly handles calculator history, favorites, and browser storage.",
+  keywords: ["privacy policy", "calculator history", "local storage", "favorites", "browser data"],
   alternates: {
     canonical: "https://unit-convertor-tools.vercel.app/privacy",
     languages: {
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Privacy Policy | Zero-Tracking Data Integrity Commitments | Convertly",
-    description: "Read how Convertly protects your physical and financial calculator parameters. We use zero third-party ads, zero tracking scripts, and secure browser-native localStorage.",
+    title: "Privacy Policy | Convertly",
+    description: "Read how Convertly handles calculator history, favorites, and browser storage.",
     url: "https://unit-convertor-tools.vercel.app/privacy",
     siteName: "Convertly",
     locale: "en_US",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Zero-Tracking Data Integrity Commitments | Convertly",
-    description: "Read how Convertly protects your physical and financial calculator parameters. We use zero third-party ads, zero tracking scripts, and secure browser-native localStorage.",
+    title: "Privacy Policy | Convertly",
+    description: "Read how Convertly handles calculator history, favorites, and browser storage.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
       "@id": "https://unit-convertor-tools.vercel.app/privacy#webpage",
       "url": "https://unit-convertor-tools.vercel.app/privacy",
       "name": "Privacy Policy - Convertly",
-      "description": "Information on our data protection parameters and local storage implementation.",
+      "description": "Information on how Convertly uses local browser storage for calculator convenience features.",
     },
     {
       "@context": "https://schema.org",
@@ -61,11 +61,7 @@ export default function PrivacyPage() {
 
   return (
     <>
-      {/* Inject Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="space-y-8">
@@ -80,24 +76,24 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-zinc-500 mt-2 text-sm max-w-2xl leading-relaxed">
-              Your data is strictly private. Learn how we handle storage and calculations.
+              Your data is handled locally where possible. Learn how we use storage and support data.
             </p>
           </div>
 
           <div className="space-y-6 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">1. Information Collection</h2>
             <p>
-              Convertly is designed as a server-side rendered, client-side stateful application. We **do not collect, harvest, or transmit** any parameters you enter in our calculators or converter inputs.
+              Convertly is designed so calculator inputs are processed in the browser. We do not require an account to use the main tools.
             </p>
 
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">2. Local Browser Storage</h2>
             <p>
-              Our dynamic favorites system and conversion history widgets operate strictly through browser-native `localStorage`. This data is saved directly on your device, is never uploaded to our servers, and can be cleared instantly by selecting the “Clear History” button in the sidebar.
+              Favorites and conversion history are stored with browser-native <code>localStorage</code>. This data stays on your device and can be cleared from the interface.
             </p>
 
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">3. Third Party Services</h2>
             <p>
-              We use no external behavioral tracking tools or advertising scripts. Clean operations protect your device bandwidth and maximize page speed metrics.
+              We aim to keep third-party scripts to a minimum and avoid unnecessary tracking.
             </p>
           </div>
         </div>
@@ -105,4 +101,3 @@ export default function PrivacyPage() {
     </>
   );
 }
-

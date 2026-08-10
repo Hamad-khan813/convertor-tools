@@ -129,7 +129,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!toolData) return { title: "Converter Not Found" };
 
   const seoTitle = `${toolData.name} Converter | Step-by-Step Formulas | Convertly`;
-  const seoDesc = `${toolData.description} High-precision calculator with live steps, mathematical formulas, and a side-by-side comparison table. 100% free with instant conversion results.`;
+  const seoDesc = `${toolData.description} Includes live steps, mathematical formulas, and a side-by-side comparison table.`;
 
   return {
     title: seoTitle,

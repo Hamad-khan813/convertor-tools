@@ -51,7 +51,7 @@ export default function BlogPage() {
             <Link href="/" className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-6 py-5 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition">
               Back to Home
             </Link>
-            <Link href="/#categories" className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-6 py-5 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition">
+            <Link href="/categories" className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 px-6 py-5 text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition">
               Browse Categories
             </Link>
           </div>

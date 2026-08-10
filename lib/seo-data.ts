@@ -1,6 +1,6 @@
 import { categories } from "@/lib/tools-data";
 
-export const siteBaseUrl = "https://convertortools.vercel.app";
+export const siteBaseUrl = "https://unit-convertor-tools.vercel.app";
 
 export interface HubConversionLink {
   slug: string;

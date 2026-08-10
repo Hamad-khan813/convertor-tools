@@ -118,7 +118,7 @@ export default function Home() {
       id: "npk-fertilizer-calculator",
       category: "agriculture",
       name: "Advanced NPK Fertilizer Mixer",
-      description: "Precise NPK recipe builder by Hamad – Used by hydroponic growers and farmers worldwide.",
+      description: "Precise NPK recipe builder for hydroponic growers and farmers.",
       color: "from-emerald-500/10 to-emerald-600/5 hover:border-emerald-500/50 dark:hover:border-emerald-500/30",
       iconColor: "text-emerald-500 bg-emerald-50 dark:bg-emerald-950/20",
       externalUrl: "https://ferti-calc.vercel.app",
@@ -196,7 +196,7 @@ export default function Home() {
 
           {/* Subheadline */}
           <p className="mx-auto max-w-2xl text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10">
-            The internet's fastest and most precise conversion suite. Built for engineers, agronomists, finance experts, and everyday tasks. Audited formulas, no ads, and strictly zero tracking.
+            A fast conversion suite built for engineers, agronomists, finance tasks, and everyday conversions. The tools are designed for clarity, accuracy, and easy access.
           </p>
 
           {/* Smart Universal Search */}
@@ -217,7 +217,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-semibold mt-8">
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A2.25 2.25 0 0 1 12.75 21.5h-1.5a2.25 2.25 0 0 1-2.25-2.263V19.13m4.5-9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM3 19.128a9.38 9.38 0 0 1 2.625.372 9.337 9.337 0 0 1 4.121-.952 4.125 4.125 0 0 1-7.533-2.493M3 19.128v-.003c0-1.113.285-2.16.786-3.07M3 19.128v.109A2.25 2.25 0 0 0 5.25 21.5h1.5a2.25 2.25 0 0 0 2.25-2.263V19.13" /></svg>
-              500k+ Monthly Users
+              Fast, responsive tools
             </span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-800">•</span>
             <span className="flex items-center gap-2">
@@ -237,20 +237,20 @@ export default function Home() {
       <section className="relative w-full border-y border-zinc-200/80 dark:border-zinc-800/80 bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md mb-20 z-10">
         <div className="max-w-7xl mx-auto py-8 px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="space-y-1">
-            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">14,892,201+</div>
+            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">400+</div>
             <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Calculations Solved</div>
           </div>
           <div className="space-y-1 border-l border-zinc-200/60 dark:border-zinc-800/60">
-            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">420+</div>
+            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">20+</div>
             <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Specialized Tools</div>
           </div>
           <div className="space-y-1 border-l border-zinc-200/60 dark:border-zinc-800/60">
-            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">&lt; 50ms</div>
+            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">Instant</div>
             <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Avg. Load Duration</div>
           </div>
           <div className="space-y-1 border-l border-zinc-200/60 dark:border-zinc-800/60">
-            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">100%</div>
-            <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Math-Formula Audited</div>
+            <div className="text-2xl sm:text-3.5xl font-black text-zinc-950 dark:text-white tracking-tight">Clear</div>
+            <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Formula-first UX</div>
           </div>
         </div>
       </section>
@@ -386,7 +386,7 @@ export default function Home() {
                     Advanced NPK Fertilizer Mixer
                   </h3>
                   <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-medium">
-                    Precise NPK recipe builder by Hamad – Used by hydroponic growers and farmers worldwide. 
+                    Precise NPK recipe builder for hydroponic growers and farmers.
                     Calculate custom PPM target values, macronutrient compositions, and chemical batch mixing parameters instantly.
                   </p>
                 </div>
@@ -440,7 +440,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-sm italic text-zinc-700 dark:text-zinc-300 leading-relaxed font-medium">
-                    "I build civil engineering simulation systems, and finding a conversion site that doesn't bombard you with tracking popups, cookies, or flashing ads was rare. Convertly is blazing fast, and the double precision float math is NIST audited."
+                    "I build civil engineering simulation systems, and I value conversion tools that are fast, straightforward, and easy to verify. Convertly fits that workflow well."
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <div className="h-9 w-9 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black text-xs">
@@ -495,7 +495,7 @@ export default function Home() {
                 In fields as diverse as structural construction, astrophysics, healthcare diagnostics, agronomy, and culinary sciences, precise measurements are non-negotiable. A small round-off error in a dynamic blueprint or agricultural soil fertilizer ratio calculation can trigger real-world failures. That is why we engineered <strong>Convertly</strong>.
               </p>
               <p>
-                Convertly combines enterprise-grade Next.js 16 server-side processing with an instantaneous client-side calculation engine. Unlike traditional conversion sites, Convertly loads in milliseconds, does not track your private sessions, uses zero third-party ads, and operates entirely dynamically.
+                Convertly combines server-rendered pages with interactive client-side calculators. The goal is to keep conversions easy to find, easy to understand, and easy to use.
               </p>
               <p>
                 <strong>How does the Universal Smart Search work?</strong> Our search parser is trained using natural-language pattern matching. Typing <em>“convert 75 kg to pounds”</em> or <em>“37 c to f”</em> instantly parses the values and returns direct, copyable answers in the suggestion box.
@@ -513,7 +513,7 @@ export default function Home() {
                     Are the conversions on Convertly mathematically accurate?
                   </h4>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed">
-                    Yes, all computations are executed using high-precision double-float mathematics. Conversion ratios are strictly audited and verified against the National Institute of Standards and Technology (NIST) and international SI guidelines.
+                    The site uses the conversion constants defined in the codebase and presents formulas directly on the page so users can verify the math themselves.
                   </p>
                 </div>
                 <div className="space-y-2">

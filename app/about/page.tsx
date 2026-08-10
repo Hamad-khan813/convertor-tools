@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Convertly | Premium Numerical Standards & Precision Mission",
-  description: "Learn about the mission, technological stack, and strict mathematical standards powering Convertly. Blazing fast, zero ads, no trackers, and NIST audited double-float precision.",
+  description: "Learn about Convertly, a unit conversion and calculator site built for clarity, speed, and practical use.",
   keywords: ["about convertly", "numerical standards", "calculator precision", "privacy policy", "fast unit converters"],
   alternates: {
     canonical: "https://unit-convertor-tools.vercel.app/about",
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "About Convertly | Premium Numerical Standards & Precision Mission",
-    description: "Learn about the mission, technological stack, and strict mathematical standards powering Convertly.",
+    title: "About Convertly | Unit Conversion and Calculator Tools",
+    description: "Learn about Convertly, a unit conversion and calculator site built for clarity, speed, and practical use.",
     url: "https://unit-convertor-tools.vercel.app/about",
     siteName: "Convertly",
     locale: "en_US",
@@ -35,8 +35,8 @@ export default function AboutPage() {
       "@type": "AboutPage",
       "@id": "https://unit-convertor-tools.vercel.app/about#webpage",
       "url": "https://unit-convertor-tools.vercel.app/about",
-      "name": "About Convertly - Our Precision Mission",
-      "description": "Discover the scientific and engineering parameters guiding Convertly unit solvers.",
+      "name": "About Convertly",
+      "description": "Discover the mission and practical focus behind Convertly unit conversion tools.",
     },
     {
       "@context": "https://schema.org",
@@ -87,20 +87,20 @@ export default function AboutPage() {
           <div className="space-y-6 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Our Mission</h2>
             <p>
-              Convertly was founded in 2026 to solve a major problem with the modern internet: legibility. For years, unit conversion sites have been cluttered with slow loading layouts, intrusive tracking scripts, and outdated user interfaces.
+              Convertly exists to make everyday unit conversion easier to find, faster to use, and simpler to verify.
             </p>
             <p>
-              Our objective is to deliver a premium, fast, highly precise calculation hub. By utilizing Next.js 15 Server-Side Rendering (SSR), lightweight vector rendering, and localized clients, we build pages that load instantly and provide zero lag for students, scientists, farmers, and engineering teams.
+              Our objective is to deliver a fast calculation hub with clear formulas, practical layouts, and straightforward navigation for students, professionals, and everyday users.
             </p>
 
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Mathematical Integrity</h2>
             <p>
-              Precision is our core metric. All conversion constants are calibrated against standard units established by the International Bureau of Weights and Measures (BIPM) and the National Institute of Standards and Technology (NIST). Our calculations process numbers using double-precision floating-point formats, providing high numerical resolution up to 6 decimal places.
+              Precision matters on every calculator page. We publish the formulas and conversion logic directly in the interface so users can review the math behind each result.
             </p>
 
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Open & Private</h2>
             <p>
-              Your activity belongs to you. Convertly implements the **Favorites & Conversion History** systems strictly on your local browser machine via `localStorage`. No search history or calculator parameters are ever uploaded to cloud servers.
+              Favorites and history are stored locally in your browser with `localStorage`. That keeps common calculator shortcuts on your device without requiring an account.
             </p>
           </div>
         </div>

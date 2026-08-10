@@ -111,8 +111,8 @@ export default function Footer() {
             &copy; {currentYear} Convertly Inc. All rights reserved. Made with love for precision.
           </p>
           <div className="flex gap-6 text-xs text-zinc-500 dark:text-zinc-400">
-            <span>Core Web Vitals: 100% Optimized</span>
-            <span>SSR Powered</span>
+            <span>Built with Next.js</span>
+            <span>Calculator-focused UX</span>
           </div>
         </div>
       </div>
